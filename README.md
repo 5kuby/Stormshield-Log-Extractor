@@ -8,3 +8,12 @@ Closed log name format is the fillowing:
 **l_category_INDEX_OpeningDate_ClosingDate_NumberOfLines**.
 
 This script can iterate over all log file of a specified category and limit the search operation only to the file wich potentially include entries of interest.
+
+##Wildcard examples
+
+Wildcars are used into grep -E instruction, it means that the expression is evluated as extended one. Tese are examples about this type of wildcard:
+
+-search for 192.168.1.1 or 192.168.1.2 : 192.168.1.[12]
+-search for 192.168.1.0/24 : 192.168.1..*
+-search for 192.168.10.1 or 192.168.12.1 : 192.168.1[02].1
+
