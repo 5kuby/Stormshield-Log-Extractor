@@ -71,7 +71,9 @@ while read line
   line_ref=$(echo $line| cut -f2,3 -d' '| sed 's/[^0-9]*//g')
   if [ $line_ref -ge $start_time_reference -a $line_ref -le $end_time_reference ];
    then
-    echo "$line" >> $outfile
+    echo "$line" >> /tmp/Unsorted_logextractor_tempfile
   fi
 done </tmp/log_extractor_tempfile
 rm /tmp/log_extractor_tempfile
+cat /tmp/Unsorted_logextractor_tempfile | sort -k2 -k3 -r > $outfile
+rm /tmp/Unsorted_logextractor_tempfile
